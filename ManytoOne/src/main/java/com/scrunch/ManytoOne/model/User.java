@@ -1,8 +1,10 @@
-package com.oto.onetoone.model;
+package com.scrunch.ManytoOne.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import com.scrunch.ManytoOne.model.UserProfile;
 
 @Entity
 @Table(name = "users")

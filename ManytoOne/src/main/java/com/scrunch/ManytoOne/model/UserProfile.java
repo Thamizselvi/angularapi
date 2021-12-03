@@ -1,19 +1,15 @@
-package com.oto.onetoone.model;
-
-import java.time.LocalDate;
+package com.scrunch.ManytoOne.model;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-
-import javax.persistence.FetchType;
-
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-import com.oto.onetoone.model.User;
+import com.scrunch.ManytoOne.model.User;
 
 @Entity
 @Table(name = "UserProfile")
@@ -35,12 +31,10 @@ public class UserProfile {
 
 	@Column(name = "userid")
 	private Integer userid;
-
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "userid", nullable = false, updatable = false, insertable = false)
-
+	
+	@ManyToOne
 	private User user;
-
+	
 	public UserProfile() {
 		super();
 	}
@@ -52,7 +46,7 @@ public class UserProfile {
 		this.city = city;
 		this.phone = phone;
 		this.userid = userid;
-		this.user = user;
+		
 	}
 
 	public Integer getProfileid() {
@@ -95,18 +89,18 @@ public class UserProfile {
 		this.userid = userid;
 	}
 
-	public User getUser() {
-		return user;
-	}
-
-	public void setUser(User user) {
-		this.user = user;
-	}
+//	public User getUser() {
+//		return user;
+//	}
+//
+//	public void setUser(User user) {
+//		this.user = user;
+//	}
 
 	@Override
 	public String toString() {
 		return "UserProfile [profileid=" + profileid + ", address=" + address + ", city=" + city + ", phone=" + phone
-				+ ", userid=" + userid + ", user=" + user + "]";
+				+ ", userid=" + userid + ", ]";
 	}
 
 }

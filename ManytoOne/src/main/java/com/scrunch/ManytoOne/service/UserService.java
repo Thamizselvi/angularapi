@@ -1,19 +1,19 @@
-package com.oto.onetoone.service;
+package com.scrunch.ManytoOne.service;
 
-import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+import com.scrunch.ManytoOne.model.User;
+import com.scrunch.ManytoOne.model.UserProfile;
+import com.scrunch.ManytoOne.repository.UserProfileRepository;
+import com.scrunch.ManytoOne.repository.UserRepository;
 
-import com.oto.onetoone.model.User;
-import com.oto.onetoone.model.UserProfile;
-import com.oto.onetoone.repository.UserProfileRepository;
-import com.oto.onetoone.repository.UserRepository;
-
+@Service
 public class UserService {
-
+	
 
 	@Autowired
 	private UserRepository userRepository;
@@ -46,7 +46,7 @@ public class UserService {
 
 
 
-		public Optional<UserProfile> findbyid(Long id) {
+		public Optional<UserProfile> findbyid(Integer id) {
 		return userProfileRepository.findById(id);
 
 
