@@ -17,7 +17,7 @@ import com.scrunch.ManytoOne.model.UserProfile;
 import com.scrunch.ManytoOne.model.User;
 import com.scrunch.ManytoOne.service.UserService;
 
-@RequestMapping("/main")
+@RequestMapping("/main").
 @RestController
 public class UserController {
 	@Autowired
